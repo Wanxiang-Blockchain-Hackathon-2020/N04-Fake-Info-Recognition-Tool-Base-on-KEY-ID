@@ -1,0 +1,35 @@
+{
+  "manifest_version": 2,
+  "name": "mykey",
+  "version": "1.0.0",
+  "description": "__MSG_PluginDesc__",
+  "icons": {
+    "16": "img/favicon-32.png",
+    "48": "img/favicon-32.png",
+    "128": "img/favicon-32.png"
+  },
+  "default_locale": "zh_CN",
+  "homepage_url": "https://mykey.org/",
+  "browser_action": {
+    "default_icon": "img/favicon-32.png",
+    "default_title": "__MSG_PageActionDefaultTitle__",
+    "default_popup": "html/popup.html"
+  },
+  "omnibox": { "keyword": "mykey" },
+  "content_scripts": [
+    {
+      "matches": ["https://bihu.com/edit"],
+      "js": [
+        "js/jquery-3.4.1.min.js",
+        "js/content-script.js",
+        "js/md5.min.js",
+        "js/qrcode.min.js"
+      ],
+      "css": ["css/inject.css"],
+      "run_at": "document_start"
+    }
+  ],
+  "background": {
+    "scripts": ["js/background.js"]
+  }
+}
