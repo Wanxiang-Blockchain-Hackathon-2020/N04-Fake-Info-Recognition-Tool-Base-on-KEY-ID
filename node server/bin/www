@@ -1,0 +1,125 @@
+#!/usr/bin/env node
+
+/**
+ * Module dependencies.
+ */
+
+var app = require("../app");
+var https = require("https");
+var http = require("http");
+var fs = require("fs");
+
+/**
+ * Get port from environment and store in Express.
+ */
+
+var httpPort = normalizePort(process.env.PORT || 3006);
+var httpsPort = normalizePort(process.env.PORT || 3008);
+
+/**
+ * Create HTTP server.
+ */
+
+// #生成私钥key文件：
+// $ openssl genrsa -out privatekey.pem 1024
+// npm run privatekey
+
+// #通过私钥生成CSR证书签名
+// $ openssl req -new -key privatekey.pem -out certsign.csr
+// npm run csr
+// mk mk mk mk mk mk mk mykey
+
+// # 通过私钥和证书签名生成证书文件
+// $ openssl x509 -req -in certsign.csr -signkey privatekey.pem -out certificate.crt
+// npm run crt
+
+var httpsServer = https.createServer(
+  {
+    key: fs.readFileSync("./privatekey.pem", "utf8"),
+    cert: fs.readFileSync("./certificate.crt", "utf8")
+  },
+  app
+);
+
+var httpServer = http.createServer(app);
+
+/**
+ * Listen on provided port, on all network interfaces.
+ */
+console.log(httpPort);
+httpServer.listen(httpPort);
+httpServer.on("error", onHttpError);
+
+console.log(httpsPort);
+httpsServer.listen(httpsPort);
+httpsServer.on("error", onHttpsError);
+
+/**
+ * Normalize a port into a number, string, or false.
+ */
+
+function normalizePort(val) {
+  var port = parseInt(val, 10);
+
+  if (isNaN(port)) {
+    // named pipe
+    return val;
+  }
+
+  if (port >= 0) {
+    // port number
+    return port;
+  }
+
+  return false;
+}
+
+/**
+ * Event listener for HTTP server "error" event.
+ */
+
+function onHttpsError(error) {
+  if (error.syscall !== "listen") {
+    throw error;
+  }
+
+  var bind =
+    typeof httpsPort === "string" ? "Pipe " + httpsPort : "Port " + httpsPort;
+
+  // handle specific listen errors with friendly messages
+  switch (error.code) {
+    case "EACCES":
+      console.error(bind + " requires elevated privileges");
+      process.exit(1);
+      break;
+    case "EADDRINUSE":
+      console.error(bind + " is already in use");
+      process.exit(1);
+      break;
+    default:
+      throw error;
+  }
+}
+
+function onHttpError(error) {
+  if (error.syscall !== "listen") {
+    throw error;
+  }
+
+  var bind =
+    typeof httpPort === "string" ? "Pipe " + httpPort : "Port " + httpPort;
+
+  // handle specific listen errors with friendly messages
+  switch (error.code) {
+    case "EACCES":
+      console.error(bind + " requires elevated privileges");
+      process.exit(1);
+      break;
+    case "EADDRINUSE":
+      console.error(bind + " is already in use");
+      process.exit(1);
+      break;
+    default:
+      throw error;
+  }
+}

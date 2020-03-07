@@ -1,0 +1,16 @@
+{
+  "name": "mykey",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www",
+    "privatekey": "openssl genrsa -out privatekey.pem 1024",
+    "csr": "openssl req -new -key privatekey.pem -out certsign.csr",
+    "crt": "openssl x509 -req -in certsign.csr -signkey privatekey.pem -out certificate.crt"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "~4.16.0",
+    "redis": "^3.0.2"
+  }
+}
