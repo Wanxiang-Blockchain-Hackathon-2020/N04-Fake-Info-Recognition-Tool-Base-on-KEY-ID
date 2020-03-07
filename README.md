@@ -1,6 +1,10 @@
 # N04-Fake-Info-Recognition-Tool-Base-on-KEY-ID
 基于数字身份的社交平台虚假信息识别工具
 
+## Demo预览
+
+![](https://raw.githubusercontent.com/Wanxiang-Blockchain-Hackathon-2020/N04-Fake-Info-Recognition-Tool-Base-on-KEY-ID/master/gifdemo.gif)
+
 ## 部署redis
 
 ### 安装
