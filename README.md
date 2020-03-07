@@ -77,9 +77,14 @@ const getSignIntervalTime = 5000; // 轮询服务器是否收到mykey签名回�
 
 2.4:上架chrome扩展程序商店
 
+## 本次Hackathon Slides 下载(内含视频Demo)
+https://github.com/Wanxiang-Blockchain-Hackathon-2020/N04-Fake-Info-Recognition-Tool-Base-on-KEY-ID/blob/master/%E5%9F%BA%E4%BA%8E%E6%95%B0%E5%AD%97%E8%BA%AB%E4%BB%BD%E7%9A%84%E7%A4%BE%E4%BA%A4%E5%B9%B3%E5%8F%B0%E8%99%9A%E5%81%87%E4%BF%A1%E6%81%AF%E8%AF%86%E5%88%AB%E5%B7%A5%E5%85%B7%20.pptx
+
 ## 其他相关参考
 
 https://github.com/mykeylab/KEYID-protocol KEY-ID协议合约开源代码
+
 https://docs.mykey.org/integrate-with-mykey/scan#qian-ming MYKEY扫码签名文档
+
 https://mykey.org/ MYKEY APP 下载
 
