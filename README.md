@@ -1,10 +1,6 @@
 # N04-Fake-Info-Recognition-Tool-Base-on-KEY-ID
 基于数字身份的社交平台虚假信息识别工具
 
-## Demo预览
-
-![](https://raw.githubusercontent.com/Wanxiang-Blockchain-Hackathon-2020/N04-Fake-Info-Recognition-Tool-Base-on-KEY-ID/master/gifdemo.gif)
-
 ## 部署redis
 
 ### 安装
@@ -83,6 +79,10 @@ const getSignIntervalTime = 5000; // 轮询服务器是否收到mykey签名回�
 
 ## 本次Hackathon Slides 下载(内含视频Demo)
 https://github.com/Wanxiang-Blockchain-Hackathon-2020/N04-Fake-Info-Recognition-Tool-Base-on-KEY-ID/blob/master/%E5%9F%BA%E4%BA%8E%E6%95%B0%E5%AD%97%E8%BA%AB%E4%BB%BD%E7%9A%84%E7%A4%BE%E4%BA%A4%E5%B9%B3%E5%8F%B0%E8%99%9A%E5%81%87%E4%BF%A1%E6%81%AF%E8%AF%86%E5%88%AB%E5%B7%A5%E5%85%B7%20.pptx
+
+### Demo预览
+
+![](https://raw.githubusercontent.com/Wanxiang-Blockchain-Hackathon-2020/N04-Fake-Info-Recognition-Tool-Base-on-KEY-ID/master/gifdemo.gif)
 
 ## 其他相关参考
 
