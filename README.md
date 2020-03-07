@@ -63,7 +63,7 @@ npm run start
 
 ```
 const isUseHttps = true; // true使用https请求，false使用http请求
-const host = "192.168.1.5"; // 本地ip
+const host = "0.0.0.0"; // 本地ip
 const getSignIntervalTime = 5000; // 轮询服务器是否收到mykey签名回调的间隔
 ```
 
