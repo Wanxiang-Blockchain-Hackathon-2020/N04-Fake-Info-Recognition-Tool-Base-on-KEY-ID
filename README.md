@@ -77,4 +77,9 @@ const getSignIntervalTime = 5000; // 轮询服务器是否收到mykey签名回�
 
 2.4:上架chrome扩展程序商店
 
+## 其他相关参考
+
+https://github.com/mykeylab/KEYID-protocol KEY-ID协议合约开源代码
+https://docs.mykey.org/integrate-with-mykey/scan#qian-ming MYKEY扫码签名文档
+https://mykey.org/ MYKEY APP 下载
 
